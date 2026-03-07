@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>Penta‑Victory · 中草药香囊</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 局部增强：更丰富的头图叠层与卡片阴影 */
+    .hero-rich { padding:48px 18px; min-height:56vh; display:flex; gap:28px; align-items:center; }
+    .hero-visual img { width:360px; height:auto; border-radius:16px; transform:translateY(6px); box-shadow: 0 30px 60px rgba(20,40,20,0.12); }
+    .hero-content h1 { font-size:32px; line-height:1.05; margin-bottom:12px; }
+    .hero-cta .hero-btn { padding:12px 20px; font-size:15px; }
+    .section-products .home-grid .product { transition: transform .18s ease, box-shadow .18s ease; }
+    .section-products .home-grid .product:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(20,40,20,0.12); }
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:18px; }
+    .team-card { padding:14px; border-radius:12px; background:linear-gradient(180deg,#fff,#fbfffb); box-shadow:0 12px 28px rgba(20,40,20,0.04); }
+    .testi-grid .testi { transition: transform .18s ease; }
+    .testi-grid .testi:hover { transform: translateY(-6px); box-shadow:0 20px 40px rgba(20,40,20,0.08); }
+    @media (max-width:980px){ .hero-visual{display:none} .hero-content h1{font-size:22px} }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <div class="logo-mark">PV</div>
+    <div class="logo-text">
+      <div class="logo-title">Penta‑Victory</div>
+      <div class="logo-subtitle">中草药香囊 · 环保手作</div>
+    </div>
+  </div>
+  <ul>
+    <li><a href="index.html" class="active">首页 Home</a></li>
+    <li><a href="products.html">成品香囊 Aroma Works</a></li>
+    <li><a href="diy.html">DIY 手作 Herbal Lab</a></li>
+    <li><a href="core.html">可替换内芯 Replaceable Core</a></li>
+  </ul>
+</nav>
+
+<header class="hero hero-rich">
+  <div class="hero-content">
+    <h1>一枚香囊，给年轻人的睡眠与情绪一点自然的缓冲</h1>
+    <p>中央财经大学 Penta‑Victory 团队，把中草药、可降解内芯与 MBTI 外壳结合，做出既环保又有温度的香囊。</p>
+    <div class="hero-cta">
+      <a class="hero-btn" href="diy.html">开始 DIY</a>
+      <a class="hero-btn ghost" href="products.html">查看成品</a>
+    </div>
+
+    <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
+      <div class="mini-stat card" style="padding:10px 12px; border-radius:10px;">
+        <strong>可降解内芯</strong><div style="font-size:13px;color:#556">水溶性聚壳糖短纤维羧甲基</div>
+      </div>
+      <div class="mini-stat card" style="padding:10px 12px; border-radius:10px;">
+        <strong>MBTI 外壳</strong><div style="font-size:13px;color:#556">个性化外观，长期复用</div>
+      </div>
+      <div class="mini-stat card" style="padding:10px 12px; border-radius:10px;">
+        <strong>草本配方</strong><div style="font-size:13px;color:#556">安神 / 驱蚊 / 净化</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="xiangnang1.png" alt="香囊示意">
+  </div>
+</header>
+
+<section class="section section-intro">
+  <div class="intro-grid">
+    <div class="intro-left">
+      <h2>我们的承诺</h2>
+      <p>可替换内芯采用 <strong>水溶性聚壳糖短纤维羧甲基</strong>，可降解、可溶于水；外壳以 MBTI 元素设计，长期使用、可替换内芯，减少浪费。</p>
+      <ul class="feature-list">
+        <li><strong>环保材料</strong> — 内芯可降解，不产生微塑料。</li>
+        <li><strong>个性外壳</strong> — MBTI 主题外壳，表达自我。</li>
+        <li><strong>草本功效</strong> — 睡眠、净化、驱蚊等主题配方。</li>
+      </ul>
+    </div>
+    <div class="intro-right">
+      <div class="card highlight">
+        <h3>当代年轻人的健康小物</h3>
+        <p>睡眠焦虑、情绪波动、空气敏感，是许多年轻人的日常。我们用草本与设计，提供温柔的日常缓冲。</p>
+      </div>
+      <div class="card">
+        <h3>可替换 · 可持续</h3>
+        <p>外壳长期使用，内芯按季节与心情更换，减少一次性消费与资源浪费。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-products">
+  <h2>精选成品</h2>
+  <p class="lead">手工缝制与草本配比，讲究使用体验与环保生命周期。</p>
+  <div class="product-grid home-grid">
+    <article class="product">
+      <img src="xiangnang1.png" alt="安神助眠">
+      <h3>安神助眠 · Sleep Well</h3>
+      <p>艾草 + 薰衣草 + 菊花，温柔陪伴你的夜晚。</p>
+      <span class="tag">安神</span>
+    </article>
+    <article class="product">
+      <img src="xiangnang2.jpg" alt="驱蚊清香">
+      <h3>驱蚊清香 · Summer Breeze</h3>
+      <p>薄荷 + 香茅 + 丁香，夏日清新不刺鼻。</p>
+      <span class="tag">驱蚊</span>
+    </article>
+    <article class="product">
+      <img src="xiangnang3.jpg" alt="净化空气">
+      <h3>净化空气 · Clean Space</h3>
+      <p>金银花 + 藿香 + 陈皮，衣柜与玄关的清新小帮手。</p>
+      <span class="tag">净化</span>
+    </article>
+  </div>
+</section>
+
+<section class="section section-team">
+  <h2>团队与故事</h2>
+  <div class="team-grid">
+    <div class="team-card">
+      <h4>Penta‑Victory</h4>
+      <p>五位来自不同专业的学生，跨学科合作，把环保、设计与草本知识结合成可落地的产品。</p>
+    </div>
+    <div class="team-card">
+      <h4>设计理念</h4>
+      <p>以“可持续、可替换、可表达”为核心，让香囊既是功能品，也是情感物件。</p>
+    </div>
+    <div class="team-card">
+      <h4>社会价值</h4>
+      <p>减少一次性消费、推广天然草本、提升年轻人对可持续生活方式的认知。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-testimonials">
+  <h2>用户感言</h2>
+  <div class="testi-grid">
+    <div class="testi">
+      <p>“放在床头后，入睡更快了，香味自然不刺鼻。”</p>
+      <span class="who">— L.，学生</span>
+    </div>
+    <div class="testi">
+      <p>“MBTI 外壳太有趣了，朋友都问我在哪里买的。”</p>
+      <span class="who">— Z.，设计师</span>
+    </div>
+    <div class="testi">
+      <p>“内芯可降解让我更放心，真的不是一次性消费品。”</p>
+      <span class="who">— M.，环保志愿者</span>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© Penta‑Victory · 中央财经大学</div>
+    <div>联系：penta-victory@example.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
