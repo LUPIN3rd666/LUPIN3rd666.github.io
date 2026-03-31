@@ -2,55 +2,204 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>成品香囊 · Penta-Victory</title>
+  <title>成品展示 · Penta-Victory</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">PV</div>
+        <div>
+          <div class="brand-title">Penta-Victory</div>
+          <div class="brand-sub">中草药香囊 · 环保手作</div>
+        </div>
+      </a>
 
-<nav class="navbar">
-  <div class="logo">
-    <div class="logo-mark">PV</div>
-    <div class="logo-text">
-      <div class="logo-title">Penta‑Victory</div>
-      <div class="logo-subtitle">中草药香囊 · 环保手作</div>
+      <button class="nav-toggle" type="button" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">首页</a>
+        <a href="products.html" class="active">成品展示</a>
+        <a href="diy.html">DIY 定制</a>
+        <a href="core.html">可替换内芯</a>
+      </div>
     </div>
-  </div>
-  <ul>
-    <li><a href="index.html">首页 Home</a></li>
-    <li><a href="products.html" class="active">成品香囊 Aroma Works</a></li>
-    <li><a href="diy.html">DIY 手作 Herbal Lab</a></li>
-    <li><a href="core.html">可替换内芯 Replaceable Core</a></li>
-  </ul>
-</nav>
+  </nav>
 
-<section class="section">
-  <h2>精选成品</h2>
-  <p class="lead">每一枚香囊都由手工缝制与草本配比，讲究使用体验与环保生命周期。</p>
+  <main class="page-shell">
+    <header class="page-header">
+      <div class="page-header-inner">
+        <div>
+          <span class="kicker">Aroma Works</span>
+          <h1>成品展示</h1>
+          <p>
+            从经典成品到主题系列，把香囊做成更完整、更好看、更容易被喜欢的作品集合。
+          </p>
+        </div>
+        <div class="page-header-image">
+          <img src="images/mbti.jpg" alt="MBTI 主题系列展示图">
+        </div>
+      </div>
+    </header>
 
-  <div class="product-grid">
-    <article class="product">
-      <img src="xiangnang1.png" alt="安神助眠香囊">
-      <h3>安神助眠 · Sleep Well</h3>
-      <p>艾草 + 薰衣草 + 菊花。像一阵温柔的夜风，帮助放松情绪、改善入睡氛围。</p>
-      <span class="tag">安神 · 睡眠</span>
-    </article>
+    <section class="section">
+      <span class="kicker reveal">Classic</span>
+      <h2 class="section-title reveal">经典成品</h2>
+      <p class="section-subtitle reveal">更适合直接挑选的三款基础香囊。</p>
 
-    <article class="product">
-      <img src="xiangnang2.jpg" alt="驱蚊清香香囊">
-      <h3>驱蚊清香 · Summer Breeze</h3>
-      <p>薄荷 + 香茅 + 丁香。天然驱蚊、清爽不刺鼻，适合夏日窗边与户外包。</p>
-      <span class="tag">驱蚊 · 清新</span>
-    </article>
+      <div class="product-grid" style="margin-top:30px;">
+        <article class="product-card reveal">
+          <div class="product-card-media">
+            <img src="xiangnang1.jpg" alt="安神助眠香囊" onerror="this.src='xiangnang1.png'">
+          </div>
+          <div class="product-card-body">
+            <h3>安神助眠</h3>
+            <p>艾草、薰衣草、菊花的柔和组合，更适合夜晚与静心时刻。</p>
+          </div>
+        </article>
 
-    <article class="product">
-      <img src="xiangnang3.jpg" alt="净化空气香囊">
-      <h3>净化空气 · Clean Space</h3>
-      <p>金银花 + 藿香 + 陈皮。适合衣柜、玄关，带来淡雅草本气息，减少异味。</p>
-      <span class="tag">净化 · 衣柜</span>
-    </article>
-  </div>
-</section>
+        <article class="product-card reveal">
+          <div class="product-card-media">
+            <img src="xiangnang2.jpg" alt="驱蚊清香香囊">
+          </div>
+          <div class="product-card-body">
+            <h3>驱蚊清香</h3>
+            <p>薄荷、香茅、丁香带来更轻快清爽的气息，适合夏季随身场景。</p>
+          </div>
+        </article>
 
+        <article class="product-card reveal">
+          <div class="product-card-media">
+            <img src="xiangnang3.jpg" alt="净化空气香囊">
+          </div>
+          <div class="product-card-body">
+            <h3>净化空气</h3>
+            <p>金银花、藿香、陈皮搭配出更清透的空间陪伴感。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="dual-showcase">
+        <div class="visual-frame padded reveal">
+          <div class="image-grid-2">
+            <div class="visual-image">
+              <img src="images/xingzuo.jpg" alt="星座主题展示图"
+                   onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='images/xingzuo12.jpg'}">
+            </div>
+            <div class="visual-image">
+              <img src="images/xingzuo12.jpg" alt="十二星座主题图"
+                   onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='images/xingzuo.jpg'}">
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <span class="kicker">Zodiac Series</span>
+          <h2 class="section-title">十二星座主题系列</h2>
+          <p class="section-subtitle">
+            每一种风格都有自己的气质与节奏，让香囊除了气味之外，也拥有更鲜明的视觉识别。
+          </p>
+        </div>
+      </div>
+
+      <div class="theme-grid" id="zodiacGrid" style="margin-top:30px;"></div>
+    </section>
+
+    <section class="section">
+      <div class="dual-showcase">
+        <div class="reveal">
+          <span class="kicker">MBTI Series</span>
+          <h2 class="section-title">16 型人格主题系列</h2>
+          <p class="section-subtitle">
+            从冷静克制到明亮外放，让不同风格都能有对应的主题表达，也让个性选择更有辨识度。
+          </p>
+        </div>
+
+        <div class="visual-frame padded reveal">
+          <div class="visual-image" style="min-height:420px;">
+            <img src="images/mbti.jpg" alt="MBTI 主题系列合集图">
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-grid" id="mbtiGrid" style="margin-top:30px;"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>© Penta-Victory · 中央财经大学</div>
+      <div>成品展示</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const zodiacList = [
+      { name: "白羊座", file: "baiyang", desc: "热烈、明快，更有行动感。" },
+      { name: "金牛座", file: "jinniu", desc: "沉稳、耐看，更偏温润质感。" },
+      { name: "双子座", file: "shuangzi", desc: "灵动轻盈，更有变化感。" },
+      { name: "巨蟹座", file: "juxie", desc: "柔和包裹，偏温暖陪伴。" },
+      { name: "狮子座", file: "shizi", desc: "更有存在感和明亮气场。" },
+      { name: "处女座", file: "chunv", desc: "简洁细致，秩序感更强。" },
+      { name: "天秤座", file: "tiancheng", desc: "轻盈优雅，整体更平衡。" },
+      { name: "天蝎座", file: "tianxie", desc: "深邃、神秘，情绪张力更强。" },
+      { name: "射手座", file: "sheshou", desc: "自由开阔，更偏活力表达。" },
+      { name: "摩羯座", file: "mojie", desc: "克制稳重，更显高级感。" },
+      { name: "水瓶座", file: "shuiping", desc: "清冷先锋，辨识度很强。" },
+      { name: "双鱼座", file: "shuangyu", desc: "柔和梦幻，氛围感更足。" }
+    ];
+
+    const mbtiList = [
+      { name: "INTJ", file: "intj", desc: "理性与锋利感并存。" },
+      { name: "INTP", file: "intp", desc: "更偏思辨与探索气质。" },
+      { name: "ENTJ", file: "entj", desc: "清晰、果断、结构感更强。" },
+      { name: "ENTP", file: "entp", desc: "灵活、跳跃，更有创意感。" },
+      { name: "INFJ", file: "infj", desc: "细腻克制，带有理想主义气息。" },
+      { name: "INFP", file: "infp", desc: "柔和、诗意，情绪感更强。" },
+      { name: "ENFJ", file: "enfj", desc: "温暖明亮，更有亲和力。" },
+      { name: "ENFP", file: "enfp", desc: "自由明快，更有感染力。" },
+      { name: "ISTJ", file: "istj", desc: "规整沉稳，更偏秩序感表达。" },
+      { name: "ISFJ", file: "isfj", desc: "温柔守护，更耐看舒适。" },
+      { name: "ESTJ", file: "estj", desc: "利落直接，线条更明确。" },
+      { name: "ESFJ", file: "esfj", desc: "友好明朗，更有亲近感。" },
+      { name: "ISTP", file: "istp", desc: "冷静克制，简练感更强。" },
+      { name: "ISFP", file: "isfp", desc: "柔软自然，更有艺术感。" },
+      { name: "ESTP", file: "estp", desc: "外放直接，更具活力。" },
+      { name: "ESFP", file: "esfp", desc: "明亮活跃，更有吸引力。" }
+    ];
+
+    function createThemeCard(item, imagePath) {
+      return `
+        <article class="theme-card reveal">
+          <div class="theme-image">
+            <img src="${imagePath}" alt="${item.name}主题成品图">
+          </div>
+          <div class="theme-body">
+            <h4>${item.name}</h4>
+            <p>${item.desc}</p>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderProducts() {
+      document.getElementById("zodiacGrid").innerHTML = zodiacList.map(item => {
+        return createThemeCard(item, `images/${item.file}.jpg`);
+      }).join("");
+
+      document.getElementById("mbtiGrid").innerHTML = mbtiList.map(item => {
+        return createThemeCard(item, `images/${item.file}.png`);
+      }).join("");
+
+      initReveal();
+    }
+
+    window.addEventListener("DOMContentLoaded", renderProducts);
+  </script>
 </body>
 </html>

@@ -2,159 +2,140 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>可替换内芯 · Penta‑Victory</title>
+  <title>可替换内芯 · Penta-Victory</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Penta-Victory 可替换内芯展示页。">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* core 页面局部样式增强 */
-    .section-core { padding-top:18px; }
-    .spec-table { width:100%; border-collapse:collapse; margin-top:12px; }
-    .spec-table th, .spec-table td { padding:10px 12px; border-bottom:1px solid rgba(0,0,0,0.06); text-align:left; }
-    .core-bubbles { display:flex; flex-wrap:wrap; gap:12px; margin-top:12px; }
-    .bubble { min-width:140px; max-width:220px; text-align:left; }
-    .bubble.active { transform:translateY(-6px); box-shadow:0 20px 40px rgba(20,40,20,0.12); }
-    .bubble-detail { margin-top:16px; padding:14px; border-radius:10px; background:linear-gradient(180deg,#fff,#fbfffb); box-shadow:0 12px 28px rgba(20,40,20,0.04); }
-    .process { margin-top:12px; padding-left:18px; }
-    .faq-grid { margin-top:12px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:12px; }
-    .spec-note { font-size:13px; color:#556; margin-top:8px; }
-    @media (max-width:980px){ .core-grid{grid-template-columns:1fr} }
-  </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">PV</div>
+        <div class="brand-text">
+          <div class="brand-title">Penta-Victory</div>
+          <div class="brand-sub">中草药香囊 · 环保手作</div>
+        </div>
+      </a>
 
-<nav class="navbar">
-  <div class="logo">
-    <div class="logo-mark">PV</div>
-    <div class="logo-text">
-      <div class="logo-title">Penta‑Victory</div>
-      <div class="logo-subtitle">中草药香囊 · 环保手作</div>
-    </div>
-  </div>
-  <ul>
-    <li><a href="index.html">首页 Home</a></li>
-    <li><a href="products.html">成品香囊 Aroma Works</a></li>
-    <li><a href="diy.html">DIY 手作 Herbal Lab</a></li>
-    <li><a href="core.html" class="active">可替换内芯 Replaceable Core</a></li>
-  </ul>
-</nav>
+      <button class="nav-toggle" type="button" onclick="toggleMenu()">☰</button>
 
-<section class="section">
-  <h2>可替换内芯的设计初衷</h2>
-  <p>我们希望香囊不是一次性消费品。内芯采用 <strong>水溶性聚壳糖短纤维羧甲基</strong>，在使用寿命结束后可溶于水或作为可降解垃圾处理，避免微塑料残留。</p>
-</section>
-
-<section class="section section-core">
-  <div class="core-grid">
-    <div class="core-left">
-      <h3>材料与性能概览</h3>
-      <table class="spec-table" aria-label="内芯规格表">
-        <thead>
-          <tr><th>项目</th><th>说明</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>材料</td><td>水溶性聚壳糖短纤维羧甲基（天然衍生纤维复合）</td></tr>
-          <tr><td>可降解性</td><td>可在自然条件下分解，不产生塑料微粒</td></tr>
-          <tr><td>溶解性</td><td>温水中可加速溶解，便于家庭处理</td></tr>
-          <tr><td>使用寿命</td><td>建议 4–8 周（视使用环境与频率）</td></tr>
-          <tr><td>安全性</td><td>无毒、无残留有害化学添加剂</td></tr>
-        </tbody>
-      </table>
-      <div class="spec-note">注：以上为常规建议，具体更换频率可根据个人使用情况调整。</div>
-
-      <h3 style="margin-top:18px;">使用与回收流程（简洁步骤）</h3>
-      <ol class="process">
-        <li>打开外壳，取出内芯。</li>
-        <li>若选择溶解处理：将内芯投入温水中搅拌直至溶解，随后将溶液按当地规定处理。</li>
-        <li>若选择投放：将内芯作为可降解垃圾分类投放。</li>
-        <li>清洗外壳并晾干，装入新内芯继续使用。</li>
-      </ol>
-
-      <h3 style="margin-top:18px;">规格与包装</h3>
-      <p>我们提供多种内芯规格以适配不同外壳体积：小（旅行）、中（随身）、大（家用）。每包内芯均为独立小包，便于替换与保存。</p>
-    </div>
-
-    <div class="core-right">
-      <h3>特性气泡（点击查看详情）</h3>
-      <p class="muted">每个气泡代表内芯或设计的一个关键卖点，点击会在下方显示更详细说明。</p>
-
-      <div class="core-bubbles" id="core-bubbles">
-        <button class="bubble b-eco" data-key="eco"><strong>可降解</strong><span class="small">不留微塑料</span></button>
-        <button class="bubble b-water" data-key="water"><strong>水溶性</strong><span class="small">温水可溶</span></button>
-        <button class="bubble b-safe" data-key="safe"><strong>材料安全</strong><span class="small">无毒配方</span></button>
-        <button class="bubble b-life" data-key="life"><strong>外壳可复用</strong><span class="small">长期使用</span></button>
-        <button class="bubble b-style" data-key="style"><strong>MBTI 外壳</strong><span class="small">个性化选择</span></button>
-        <button class="bubble b-usage" data-key="usage"><strong>易替换</strong><span class="small">快速拆装</span></button>
-        <button class="bubble b-odour" data-key="odour"><strong>低残留气味</strong><span class="small">不掩盖草本</span></button>
-        <button class="bubble b-eco2" data-key="eco2"><strong>低碳制造</strong><span class="small">生产能耗优化</span></button>
-      </div>
-
-      <div class="bubble-detail" id="bubble-detail" aria-live="polite">
-        <h4 id="bubble-title">选择一个特性</h4>
-        <p id="bubble-desc">点击上方气泡查看更详细的说明、使用建议与回收方式。</p>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">首页</a>
+        <a href="products.html">成品展示</a>
+        <a href="diy.html">DIY 定制</a>
+        <a href="core.html" class="active">可替换内芯</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="section section-faq">
-  <h2>常见问题</h2>
-  <div class="faq-grid">
-    <div class="faq">
-      <h4>内芯多久更换一次？</h4>
-      <p>建议 4–8 周更换一次；若放在高温或潮湿环境，建议更频繁更换以保持香气与卫生。</p>
+  <main class="page-shell">
+    <header class="page-header">
+      <div class="page-header-inner">
+        <div>
+          <span class="kicker">Replaceable Core</span>
+          <h1>让香囊不再是一次性消费品</h1>
+          <p>
+            我们希望用户长期保留喜欢的外壳，只替换内部草本芯。
+            这样既强化了产品环保价值，也让项目更完整、更有可持续逻辑。
+          </p>
+        </div>
+        <div class="page-header-image">
+          <img src="xiangnang3.jpg" alt="可替换内芯页面主图">
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <span class="kicker reveal">核心卖点</span>
+      <h2 class="section-title reveal">外壳可复用，内芯可替换，使用逻辑更长期</h2>
+      <p class="section-subtitle reveal">
+        对比赛展示来说，这一页的意义不仅是介绍材料，更是说明你们的产品不是“只做一个好看页面”，
+        而是在产品逻辑层面也完成了可持续设计。
+      </p>
+
+      <div class="spec-grid" style="margin-top:28px;">
+        <div class="spec-card reveal">
+          <h4>环保复用</h4>
+          <p>用户可以长期保留外壳，只在草本衰减后替换内部香芯，减少一次性消耗。</p>
+        </div>
+        <div class="spec-card reveal">
+          <h4>草本灵活</h4>
+          <p>不同场景、季节或情绪需求下，可以搭配不同草本内芯，形成持续使用价值。</p>
+        </div>
+        <div class="spec-card reveal">
+          <h4>展示完整</h4>
+          <p>将传统香囊从手作成品扩展为完整产品方案，更适合比赛答辩和项目讲解。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split-panel reveal">
+        <div class="split-copy">
+          <span class="kicker">使用逻辑</span>
+          <h3>更像一个有生命周期管理的产品</h3>
+          <p>
+            一次购买外壳，多次更换内芯，既保留个性化表达，也延长产品使用周期。
+            这种结构对于强调环保理念和用户复购逻辑都很有帮助。
+          </p>
+          <div class="badge-list">
+            <span class="badge">外壳复用</span>
+            <span class="badge">草本替换</span>
+            <span class="badge">环保减废</span>
+            <span class="badge">长期使用</span>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>01 · 选择外壳</strong>
+            <span>从星座与 MBTI 中挑选你喜欢的外观，形成个性表达。</span>
+          </div>
+          <div class="timeline-item">
+            <strong>02 · 装入草本内芯</strong>
+            <span>根据功能需要选择不同草本方案，形成专属香气。</span>
+          </div>
+          <div class="timeline-item">
+            <strong>03 · 后续替换</strong>
+            <span>当香气减弱后，无需更换整个香囊，只替换内部香芯即可继续使用。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="kicker reveal">常见问题</span>
+      <h2 class="section-title reveal">更适合展示时回答别人最关心的问题</h2>
+
+      <div class="faq-grid" style="margin-top:28px;">
+        <div class="faq-item reveal">
+          <h4>为什么要做可替换内芯？</h4>
+          <p>因为它能把香囊从一次性手作物，变成可持续复用的产品，环保价值更突出。</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>这样做对用户有什么好处？</h4>
+          <p>用户可以保留喜欢的外观，只在需要时更换草本芯，成本和使用体验都更友好。</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>这样对比赛展示有什么帮助？</h4>
+          <p>它能让项目从“好看”进一步升级到“逻辑完整”，更适合讲述产品价值。</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>是否能继续延展产品线？</h4>
+          <p>可以，后续可以扩展不同季节、不同功效、不同节日限定的替换芯系列。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>© Penta-Victory · 中央财经大学</div>
+      <div>可替换内芯 / 可持续使用</div>
     </div>
-    <div class="faq">
-      <h4>内芯如何处理？</h4>
-      <p>可溶于温水加速分解，或作为可降解垃圾分类投放；请遵循当地垃圾分类规范。</p>
-    </div>
-    <div class="faq">
-      <h4>外壳能机洗吗？</h4>
-      <p>建议手洗或轻柔机洗，避免高温烘干以延长外壳寿命。</p>
-    </div>
-    <div class="faq">
-      <h4>内芯是否会影响过敏人群？</h4>
-      <p>内芯材料本身为可降解纤维复合，若对特定草本过敏，请避免选择含有该草本的配方；如有严重过敏史，请咨询医生。</p>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>© Penta‑Victory · 中央财经大学</div>
-    <div>联系：penta-victory@example.com</div>
-  </div>
-</footer>
-
-<script>
-  // core 页面气泡交互（独立于全局 script.js，确保立即生效）
-  (function(){
-    const bubbles = document.querySelectorAll('.core-bubbles .bubble');
-    const titleEl = document.getElementById('bubble-title');
-    const descEl = document.getElementById('bubble-desc');
-
-    const data = {
-      eco: {t:'可降解', d:'内芯在自然条件下可分解，不会留下塑料微粒，适合作为可降解垃圾处理。'},
-      water: {t:'水溶性', d:'在温水中内芯可加速溶解，便于家庭处理与分类投放。'},
-      safe: {t:'材料安全', d:'不含有害化学添加剂，经过基础安全性评估，适合日常接触。'},
-      life: {t:'外壳可复用', d:'外壳采用耐用面料，支持清洗与长期使用，减少一次性消费。'},
-      style: {t:'MBTI 外壳', d:'外壳设计以 MBTI 为灵感，提供多种风格供选择，兼具美观与表达性。'},
-      usage: {t:'易替换', d:'内芯结构设计便于拆装，用户可快速更换并按需搭配不同草本。'},
-      odour: {t:'低残留气味', d:'内芯与草本配方经过调配，避免强烈化工残留气味，保留自然草本层次。'},
-      eco2: {t:'低碳制造', d:'生产环节优化能耗与材料利用，降低碳足迹。'}
-    };
-
-    bubbles.forEach(b => {
-      b.addEventListener('click', () => {
-        bubbles.forEach(x => x.classList.remove('active'));
-        b.classList.add('active');
-        const key = b.getAttribute('data-key');
-        const info = data[key] || {t:'特性', d:'暂无详细说明。'};
-        titleEl.textContent = info.t;
-        descEl.textContent = info.d;
-      });
-    });
-  })();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>

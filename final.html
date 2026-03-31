@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>DIY 定制 · 第三步成品预览 | Penta-Victory</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">PV</div>
+        <div>
+          <div class="brand-title">Penta-Victory</div>
+          <div class="brand-sub">中草药香囊 · 环保手作</div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" type="button" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">首页</a>
+        <a href="products.html">成品展示</a>
+        <a href="diy.html" class="active">DIY 定制</a>
+        <a href="core.html">可替换内芯</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <header class="page-header">
+      <div class="page-header-inner">
+        <div>
+          <span class="kicker">DIY Step 03</span>
+          <h1>你的专属成品预览</h1>
+          <p>
+            已经根据你的草本和外观选择，生成对应的最终成品效果。
+          </p>
+        </div>
+        <div class="page-header-image">
+          <img id="headerPreviewImage" src="xiangnang3.jpg" alt="成品预览主图">
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="step-indicator">
+        <div class="step"><span class="step-num">1</span> 草本选择</div>
+        <div class="step"><span class="step-num">2</span> 外观设计</div>
+        <div class="step active"><span class="step-num">3</span> 成品预览</div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-item reveal">
+          <h3>草本方案</h3>
+          <p id="herbSummary">正在读取你的草本选择…</p>
+        </div>
+        <div class="summary-item reveal">
+          <h3>外观主题</h3>
+          <p id="designSummary">正在读取你的外观选择…</p>
+        </div>
+      </div>
+
+      <div class="summary-visual">
+        <div class="summary-image reveal">
+          <img id="finalImage" src="xiangnang1.jpg" alt="专属成品图" onerror="this.src='xiangnang1.png'">
+        </div>
+
+        <div class="summary-panel reveal">
+          <span class="kicker">Preview</span>
+          <h2 class="panel-title" id="finalTitle">你的专属香囊已生成</h2>
+          <p class="panel-desc" id="finalDesc">
+            这里展示的是最终的成品效果图。
+          </p>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>草本气息</strong>
+              <span id="timelineHerbs">等待读取草本组合。</span>
+            </div>
+            <div class="timeline-item">
+              <strong>外观风格</strong>
+              <span id="timelineDesign">等待读取外观主题。</span>
+            </div>
+            <div class="timeline-item">
+              <strong>整体感觉</strong>
+              <span id="timelineMood">一枚既有气味记忆，也有视觉个性的专属香囊。</span>
+            </div>
+          </div>
+
+          <div class="btn-row" style="margin-top:22px;">
+            <a class="btn btn-secondary" href="design.html">返回修改</a>
+            <a class="btn btn-primary" href="products.html">查看更多成品</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>© Penta-Victory · 中央财经大学</div>
+      <div>DIY 定制</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function loadFinalPage() {
+      const herbs = JSON.parse(localStorage.getItem('diy_herbs') || '[]');
+      const design = JSON.parse(localStorage.getItem('diy_design') || 'null');
+
+      const herbSummary = document.getElementById('herbSummary');
+      const designSummary = document.getElementById('designSummary');
+      const timelineHerbs = document.getElementById('timelineHerbs');
+      const timelineDesign = document.getElementById('timelineDesign');
+      const timelineMood = document.getElementById('timelineMood');
+      const finalTitle = document.getElementById('finalTitle');
+      const finalDesc = document.getElementById('finalDesc');
+      const finalImage = document.getElementById('finalImage');
+      const headerPreviewImage = document.getElementById('headerPreviewImage');
+
+      if (herbs.length) {
+        herbSummary.innerHTML = `你选择的草本为：<strong>${herbs.join('、')}</strong>。`;
+        timelineHerbs.innerHTML = `${herbs.join('、')}。`;
+      } else {
+        herbSummary.innerHTML = '暂未检测到草本选择，请返回第一步重新挑选。';
+        timelineHerbs.innerHTML = '尚未完成草本选择。';
+      }
+
+      if (design) {
+        const themeName = `${design.name}主题`;
+        designSummary.innerHTML = `你选择的外观风格为：<strong>${themeName}</strong>。`;
+        timelineDesign.innerHTML = `${themeName}。`;
+
+        finalTitle.innerHTML = `${design.name} 专属香囊`;
+        finalDesc.innerHTML = '草本气息与外观风格已经组合成最终成品效果。';
+
+        finalImage.src = design.finalImage;
+        headerPreviewImage.src = design.finalImage;
+
+        if (design.type === 'zodiac') {
+          timelineMood.innerHTML = '整体更有系列感与气质表达，适合挑选属于自己的风格。';
+        } else {
+          timelineMood.innerHTML = '整体更强调个性辨识度与风格标签，更适合做专属表达。';
+        }
+      } else {
+        designSummary.innerHTML = '暂未检测到外观设计选择，请返回第二步完成选择。';
+        timelineDesign.innerHTML = '尚未完成外观设计选择。';
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadFinalPage);
+  </script>
+</body>
+</html>

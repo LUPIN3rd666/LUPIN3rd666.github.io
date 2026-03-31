@@ -2,160 +2,210 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>Penta‑Victory · 中草药香囊</title>
+  <title>Penta-Victory · 中草药香囊</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* 局部增强：更丰富的头图叠层与卡片阴影 */
-    .hero-rich { padding:48px 18px; min-height:56vh; display:flex; gap:28px; align-items:center; }
-    .hero-visual img { width:360px; height:auto; border-radius:16px; transform:translateY(6px); box-shadow: 0 30px 60px rgba(20,40,20,0.12); }
-    .hero-content h1 { font-size:32px; line-height:1.05; margin-bottom:12px; }
-    .hero-cta .hero-btn { padding:12px 20px; font-size:15px; }
-    .section-products .home-grid .product { transition: transform .18s ease, box-shadow .18s ease; }
-    .section-products .home-grid .product:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(20,40,20,0.12); }
-    .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:18px; }
-    .team-card { padding:14px; border-radius:12px; background:linear-gradient(180deg,#fff,#fbfffb); box-shadow:0 12px 28px rgba(20,40,20,0.04); }
-    .testi-grid .testi { transition: transform .18s ease; }
-    .testi-grid .testi:hover { transform: translateY(-6px); box-shadow:0 20px 40px rgba(20,40,20,0.08); }
-    @media (max-width:980px){ .hero-visual{display:none} .hero-content h1{font-size:22px} }
-  </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">PV</div>
+        <div>
+          <div class="brand-title">Penta-Victory</div>
+          <div class="brand-sub">中草药香囊 · 环保手作</div>
+        </div>
+      </a>
 
-<nav class="navbar">
-  <div class="logo">
-    <div class="logo-mark">PV</div>
-    <div class="logo-text">
-      <div class="logo-title">Penta‑Victory</div>
-      <div class="logo-subtitle">中草药香囊 · 环保手作</div>
-    </div>
-  </div>
-  <ul>
-    <li><a href="index.html" class="active">首页 Home</a></li>
-    <li><a href="products.html">成品香囊 Aroma Works</a></li>
-    <li><a href="diy.html">DIY 手作 Herbal Lab</a></li>
-    <li><a href="core.html">可替换内芯 Replaceable Core</a></li>
-  </ul>
-</nav>
+      <button class="nav-toggle" type="button" onclick="toggleMenu()">☰</button>
 
-<header class="hero hero-rich">
-  <div class="hero-content">
-    <h1>一枚香囊，给年轻人的睡眠与情绪一点自然的缓冲</h1>
-    <p>中央财经大学 Penta‑Victory 团队，把中草药、可降解内芯与 MBTI 外壳结合，做出既环保又有温度的香囊。</p>
-    <div class="hero-cta">
-      <a class="hero-btn" href="diy.html">开始 DIY</a>
-      <a class="hero-btn ghost" href="products.html">查看成品</a>
-    </div>
-
-    <div style="margin-top:18px; display:flex; gap:10px; flex-wrap:wrap;">
-      <div class="mini-stat card" style="padding:10px 12px; border-radius:10px;">
-        <strong>可降解内芯</strong><div style="font-size:13px;color:#556">水溶性聚壳糖短纤维羧甲基</div>
-      </div>
-      <div class="mini-stat card" style="padding:10px 12px; border-radius:10px;">
-        <strong>MBTI 外壳</strong><div style="font-size:13px;color:#556">个性化外观，长期复用</div>
-      </div>
-      <div class="mini-stat card" style="padding:10px 12px; border-radius:10px;">
-        <strong>草本配方</strong><div style="font-size:13px;color:#556">安神 / 驱蚊 / 净化</div>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">首页</a>
+        <a href="products.html">成品展示</a>
+        <a href="diy.html">DIY 定制</a>
+        <a href="core.html">可替换内芯</a>
       </div>
     </div>
-  </div>
+  </nav>
 
-  <div class="hero-visual">
-    <img src="xiangnang1.png" alt="香囊示意">
-  </div>
-</header>
+  <main class="home-wrap">
+    <section class="home-panel">
+      <div class="home-panel-inner">
+        <div class="home-hero">
+          <div class="home-hero-copy reveal">
+            <span class="kicker">Natural / Personal / Beautiful</span>
+            <h1 class="home-hero-title">让香囊，<br>变成更好看的日常陪伴</h1>
+            <p class="home-hero-desc">
+              以中草药香囊为灵感，把自然气息、外观审美与个性表达融合在一起。
+              从经典成品到主题系列，再到 DIY 定制，让每一枚香囊都更适合送礼、佩戴与收藏。
+            </p>
 
-<section class="section section-intro">
-  <div class="intro-grid">
-    <div class="intro-left">
-      <h2>我们的承诺</h2>
-      <p>可替换内芯采用 <strong>水溶性聚壳糖短纤维羧甲基</strong>，可降解、可溶于水；外壳以 MBTI 元素设计，长期使用、可替换内芯，减少浪费。</p>
-      <ul class="feature-list">
-        <li><strong>环保材料</strong> — 内芯可降解，不产生微塑料。</li>
-        <li><strong>个性外壳</strong> — MBTI 主题外壳，表达自我。</li>
-        <li><strong>草本功效</strong> — 睡眠、净化、驱蚊等主题配方。</li>
-      </ul>
-    </div>
-    <div class="intro-right">
-      <div class="card highlight">
-        <h3>当代年轻人的健康小物</h3>
-        <p>睡眠焦虑、情绪波动、空气敏感，是许多年轻人的日常。我们用草本与设计，提供温柔的日常缓冲。</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="products.html">浏览成品</a>
+              <a class="btn btn-secondary" href="diy.html">开始定制</a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <strong>28 款</strong>
+                <span>主题灵感</span>
+              </div>
+              <div class="hero-stat">
+                <strong>草本搭配</strong>
+                <span>多场景选择</span>
+              </div>
+              <div class="hero-stat">
+                <strong>个性表达</strong>
+                <span>气味与外观统一</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-slider reveal" data-slider>
+            <div class="hero-slide active">
+              <img src="xiangnang1.jpg" alt="香囊主图1" onerror="this.src='xiangnang1.png'">
+              <div class="hero-slide-caption">
+                <strong>自然气息</strong>
+                <span>柔和的香气与温润的材质感，适合更长期的日常陪伴。</span>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img src="xiangnang2.jpg" alt="香囊主图2">
+              <div class="hero-slide-caption">
+                <strong>系列设计</strong>
+                <span>让香囊从功能物件，变成更完整的视觉作品。</span>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img src="xiangnang3.jpg" alt="香囊主图3">
+              <div class="hero-slide-caption">
+                <strong>草本与审美结合</strong>
+                <span>从视觉到气味，形成更统一的个人表达。</span>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/xingzuo.jpg" alt="星座主题系列展示图"
+                   onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='images/xingzuo12.jpg'}">
+              <div class="hero-slide-caption">
+                <strong>星座主题系列</strong>
+                <span>统一的系列感，更适合收藏、分享与挑选。</span>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/mbti.jpg" alt="MBTI 主题系列展示图">
+              <div class="hero-slide-caption">
+                <strong>MBTI 主题系列</strong>
+                <span>更鲜明的个性标签，让风格表达更直接、更有辨识度。</span>
+              </div>
+            </div>
+
+            <div class="hero-slide">
+              <img src="images/xingzuo12.jpg" alt="星座展示图"
+                   onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='images/xingzuo.jpg'}">
+              <div class="hero-slide-caption">
+                <strong>更多风格选择</strong>
+                <span>从柔和到冷感，从克制到明亮，都能找到合适表达。</span>
+              </div>
+            </div>
+
+            <div class="hero-dots"></div>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>可替换 · 可持续</h3>
-        <p>外壳长期使用，内芯按季节与心情更换，减少一次性消费与资源浪费。</p>
+    </section>
+
+    <section class="home-panel">
+      <div class="home-panel-inner">
+        <span class="kicker reveal">Series</span>
+        <h2 class="section-title reveal">把不同主题，做成一整套好看的系列</h2>
+        <p class="section-subtitle reveal">
+          星座与 MBTI 不只是分类标签，而是可以被看见、被挑选、被喜欢的视觉系列。
+        </p>
+
+        <div class="dual-showcase" style="margin-top:30px;">
+          <div class="visual-frame padded reveal">
+            <div class="image-grid-2">
+              <div class="visual-image">
+                <img src="images/xingzuo.jpg" alt="星座主题展示图"
+                     onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='images/xingzuo12.jpg'}">
+              </div>
+              <div class="visual-image">
+                <img src="images/mbti.jpg" alt="MBTI 主题展示图">
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-band">
+            <div class="feature-card reveal">
+              <h3>星座系列</h3>
+              <p>更强调气质、氛围和情绪共鸣，让挑选过程更有代入感。</p>
+            </div>
+            <div class="feature-card reveal">
+              <h3>MBTI 系列</h3>
+              <p>把不同人格倾向转化成更明确的视觉表达和风格偏好。</p>
+            </div>
+            <div class="feature-card reveal">
+              <h3>定制体验</h3>
+              <p>从草本到外观，再到成品预览，让整个过程更完整也更有趣。</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section section-products">
-  <h2>精选成品</h2>
-  <p class="lead">手工缝制与草本配比，讲究使用体验与环保生命周期。</p>
-  <div class="product-grid home-grid">
-    <article class="product">
-      <img src="xiangnang1.png" alt="安神助眠">
-      <h3>安神助眠 · Sleep Well</h3>
-      <p>艾草 + 薰衣草 + 菊花，温柔陪伴你的夜晚。</p>
-      <span class="tag">安神</span>
-    </article>
-    <article class="product">
-      <img src="xiangnang2.jpg" alt="驱蚊清香">
-      <h3>驱蚊清香 · Summer Breeze</h3>
-      <p>薄荷 + 香茅 + 丁香，夏日清新不刺鼻。</p>
-      <span class="tag">驱蚊</span>
-    </article>
-    <article class="product">
-      <img src="xiangnang3.jpg" alt="净化空气">
-      <h3>净化空气 · Clean Space</h3>
-      <p>金银花 + 藿香 + 陈皮，衣柜与玄关的清新小帮手。</p>
-      <span class="tag">净化</span>
-    </article>
-  </div>
-</section>
+    <section class="home-panel">
+      <div class="home-panel-inner">
+        <span class="kicker reveal">Products</span>
+        <h2 class="section-title reveal">经典成品与主题系列，一页看全</h2>
+        <p class="section-subtitle reveal">
+          不管是想直接挑选成品，还是先感受整体系列风格，都可以在这里快速浏览。
+        </p>
 
-<section class="section section-team">
-  <h2>团队与故事</h2>
-  <div class="team-grid">
-    <div class="team-card">
-      <h4>Penta‑Victory</h4>
-      <p>五位来自不同专业的学生，跨学科合作，把环保、设计与草本知识结合成可落地的产品。</p>
-    </div>
-    <div class="team-card">
-      <h4>设计理念</h4>
-      <p>以“可持续、可替换、可表达”为核心，让香囊既是功能品，也是情感物件。</p>
-    </div>
-    <div class="team-card">
-      <h4>社会价值</h4>
-      <p>减少一次性消费、推广天然草本、提升年轻人对可持续生活方式的认知。</p>
-    </div>
-  </div>
-</section>
+        <div class="product-grid" style="margin-top:30px;">
+          <article class="product-card reveal">
+            <div class="product-card-media">
+              <img src="xiangnang1.jpg" alt="安神助眠香囊" onerror="this.src='xiangnang1.png'">
+            </div>
+            <div class="product-card-body">
+              <h3>安神助眠</h3>
+              <p>柔和草本气息，更适合夜晚、书桌与床头陪伴。</p>
+            </div>
+          </article>
 
-<section class="section section-testimonials">
-  <h2>用户感言</h2>
-  <div class="testi-grid">
-    <div class="testi">
-      <p>“放在床头后，入睡更快了，香味自然不刺鼻。”</p>
-      <span class="who">— L.，学生</span>
-    </div>
-    <div class="testi">
-      <p>“MBTI 外壳太有趣了，朋友都问我在哪里买的。”</p>
-      <span class="who">— Z.，设计师</span>
-    </div>
-    <div class="testi">
-      <p>“内芯可降解让我更放心，真的不是一次性消费品。”</p>
-      <span class="who">— M.，环保志愿者</span>
-    </div>
-  </div>
-</section>
+          <article class="product-card reveal">
+            <div class="product-card-media">
+              <img src="images/mbti.jpg" alt="MBTI 主题系列展示">
+            </div>
+            <div class="product-card-body">
+              <h3>MBTI 系列</h3>
+              <p>更突出个性标签与风格辨识度，适合作为专属表达与礼物选择。</p>
+            </div>
+          </article>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>© Penta‑Victory · 中央财经大学</div>
-    <div>联系：penta-victory@example.com</div>
-  </div>
-</footer>
+          <article class="product-card reveal">
+            <div class="product-card-media">
+              <img src="images/xingzuo12.jpg" alt="星座系列展示"
+                   onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src='images/xingzuo.jpg'}">
+            </div>
+            <div class="product-card-body">
+              <h3>星座系列</h3>
+              <p>让不同气质与情绪氛围都有对应主题，整体更有收藏感与系列感。</p>
+            </div>
+          </article>
+        </div>
 
+        <div class="btn-row" style="margin-top:28px;">
+          <a class="btn btn-primary" href="products.html">进入成品展示</a>
+          <a class="btn btn-secondary" href="diy.html">进入 DIY 定制</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>

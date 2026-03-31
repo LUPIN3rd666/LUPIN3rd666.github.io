@@ -2,92 +2,235 @@
 <html lang="zh">
 <head>
   <meta charset="utf-8">
-  <title>DIY · Penta-Victory Herbal Lab</title>
+  <title>DIY 定制 · 第一步草本选择 | Penta-Victory</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-mark">PV</div>
+        <div>
+          <div class="brand-title">Penta-Victory</div>
+          <div class="brand-sub">中草药香囊 · 环保手作</div>
+        </div>
+      </a>
 
-<nav class="navbar">
-  <div class="logo">
-    <div class="logo-mark">PV</div>
-    <div class="logo-text">
-      <div class="logo-title">Penta‑Victory</div>
-      <div class="logo-subtitle">中草药香囊 · 环保手作</div>
-    </div>
-  </div>
-  <ul>
-    <li><a href="index.html">首页 Home</a></li>
-    <li><a href="products.html">成品香囊 Aroma Works</a></li>
-    <li><a href="diy.html" class="active">DIY 手作 Herbal Lab</a></li>
-    <li><a href="core.html">可替换内芯 Replaceable Core</a></li>
-  </ul>
-</nav>
+      <button class="nav-toggle" type="button" onclick="toggleMenu()">☰</button>
 
-<section class="section">
-  <h2>DIY 你的草本香囊</h2>
-  <p class="lead">选择 3–4 种草药，页面下方会显示每味草药的气泡卡片说明，点击标签会高亮并滚动到对应卡片。</p>
-
-  <div class="diy-layout">
-    <div class="herb-panel">
-      <h3>草药选择</h3>
-      <div class="herb-list">
-        <label data-herb="艾草"><input type="checkbox" value="艾草"> 艾草</label>
-        <label data-herb="薄荷"><input type="checkbox" value="薄荷"> 薄荷</label>
-        <label data-herb="薰衣草"><input type="checkbox" value="薰衣草"> 薰衣草</label>
-        <label data-herb="陈皮"><input type="checkbox" value="陈皮"> 陈皮</label>
-        <label data-herb="丁香"><input type="checkbox" value="丁香"> 丁香</label>
-        <label data-herb="菊花"><input type="checkbox" value="菊花"> 菊花</label>
-        <label data-herb="香茅"><input type="checkbox" value="香茅"> 香茅</label>
-        <label data-herb="玫瑰花"><input type="checkbox" value="玫瑰花"> 玫瑰花</label>
-        <label data-herb="桂花"><input type="checkbox" value="桂花"> 桂花</label>
-        <label data-herb="藿香"><input type="checkbox" value="藿香"> 藿香</label>
-        <label data-herb="金银花"><input type="checkbox" value="金银花"> 金银花</label>
-        <label data-herb="薄荷脑"><input type="checkbox" value="薄荷脑"> 薄荷脑</label>
-        <label data-herb="百合"><input type="checkbox" value="百合"> 百合</label>
-        <label data-herb="茉莉花"><input type="checkbox" value="茉莉花"> 茉莉花</label>
-        <label data-herb="当归"><input type="checkbox" value="当归"> 当归</label>
-        <label data-herb="川芎"><input type="checkbox" value="川芎"> 川芎</label>
-        <label data-herb="甘草"><input type="checkbox" value="甘草"> 甘草</label>
-        <label data-herb="花椒"><input type="checkbox" value="花椒"> 花椒</label>
-        <label data-herb="薄荷叶"><input type="checkbox" value="薄荷叶"> 薄荷叶</label>
-        <label data-herb="紫苏"><input type="checkbox" value="紫苏"> 紫苏</label>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">首页</a>
+        <a href="products.html">成品展示</a>
+        <a href="diy.html" class="active">DIY 定制</a>
+        <a href="core.html">可替换内芯</a>
       </div>
-      <button onclick="generate()">生成我的香囊</button>
     </div>
+  </nav>
 
-    <div class="result-panel">
-      <h3>香囊配方说明</h3>
-      <div id="result" class="result-box">请选择 3–4 种草药，点击“生成我的香囊”查看配方说明。</div>
+  <main class="page-shell">
+    <header class="page-header">
+      <div class="page-header-inner">
+        <div>
+          <span class="kicker">DIY Step 01</span>
+          <h1>选择你的草本气息</h1>
+          <p>
+            先确定你更偏爱的香气方向，再继续挑选外观风格，让整枚香囊从气味到视觉都更统一。
+          </p>
+        </div>
+        <div class="page-header-image">
+          <img src="xiangnang2.jpg" alt="DIY 主图">
+        </div>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="step-indicator">
+        <div class="step active"><span class="step-num">1</span> 草本选择</div>
+        <div class="step"><span class="step-num">2</span> 外观设计</div>
+        <div class="step"><span class="step-num">3</span> 成品预览</div>
+      </div>
+
+      <div class="diy-layout">
+        <div class="selection-panel reveal">
+          <h2 class="panel-title">草本选择区</h2>
+          <p class="panel-desc">建议选择 3-4 种，让香气更清晰，也更容易形成记忆点。</p>
+
+          <div class="herb-list">
+            <label class="herb-chip" data-herb="艾草"><input type="checkbox" value="艾草"><span>艾草</span></label>
+            <label class="herb-chip" data-herb="薄荷"><input type="checkbox" value="薄荷"><span>薄荷</span></label>
+            <label class="herb-chip" data-herb="薰衣草"><input type="checkbox" value="薰衣草"><span>薰衣草</span></label>
+            <label class="herb-chip" data-herb="陈皮"><input type="checkbox" value="陈皮"><span>陈皮</span></label>
+            <label class="herb-chip" data-herb="丁香"><input type="checkbox" value="丁香"><span>丁香</span></label>
+            <label class="herb-chip" data-herb="菊花"><input type="checkbox" value="菊花"><span>菊花</span></label>
+            <label class="herb-chip" data-herb="香茅"><input type="checkbox" value="香茅"><span>香茅</span></label>
+            <label class="herb-chip" data-herb="玫瑰花"><input type="checkbox" value="玫瑰花"><span>玫瑰花</span></label>
+            <label class="herb-chip" data-herb="桂花"><input type="checkbox" value="桂花"><span>桂花</span></label>
+            <label class="herb-chip" data-herb="藿香"><input type="checkbox" value="藿香"><span>藿香</span></label>
+            <label class="herb-chip" data-herb="金银花"><input type="checkbox" value="金银花"><span>金银花</span></label>
+            <label class="herb-chip" data-herb="薄荷脑"><input type="checkbox" value="薄荷脑"><span>薄荷脑</span></label>
+            <label class="herb-chip" data-herb="百合"><input type="checkbox" value="百合"><span>百合</span></label>
+            <label class="herb-chip" data-herb="茉莉花"><input type="checkbox" value="茉莉花"><span>茉莉花</span></label>
+            <label class="herb-chip" data-herb="当归"><input type="checkbox" value="当归"><span>当归</span></label>
+            <label class="herb-chip" data-herb="川芎"><input type="checkbox" value="川芎"><span>川芎</span></label>
+            <label class="herb-chip" data-herb="甘草"><input type="checkbox" value="甘草"><span>甘草</span></label>
+            <label class="herb-chip" data-herb="花椒"><input type="checkbox" value="花椒"><span>花椒</span></label>
+            <label class="herb-chip" data-herb="薄荷叶"><input type="checkbox" value="薄荷叶"><span>薄荷叶</span></label>
+            <label class="herb-chip" data-herb="紫苏"><input type="checkbox" value="紫苏"><span>紫苏</span></label>
+          </div>
+
+          <div class="selection-actions">
+            <button class="btn btn-secondary" type="button" onclick="resetHerbs()">清空选择</button>
+            <button class="btn btn-primary" type="button" onclick="saveHerbsAndNext()">下一步：外观设计</button>
+          </div>
+        </div>
+
+        <div class="preview-panel reveal">
+          <h2 class="panel-title">即时预览</h2>
+          <p class="panel-desc">根据你的草本选择，自动生成当前香气风格的简洁描述。</p>
+
+          <div class="result-box" id="result">
+            请选择 3-4 种草本，生成你的专属香气描述。
+          </div>
+
+          <div class="helper-grid">
+            <div class="helper-card">
+              <strong>安神放松</strong>
+              <p>薰衣草、百合、茉莉花更适合温柔、舒缓的方向。</p>
+            </div>
+            <div class="helper-card">
+              <strong>清凉清爽</strong>
+              <p>香茅、薄荷、薄荷脑更适合夏季和外出场景。</p>
+            </div>
+            <div class="helper-card">
+              <strong>清新陪伴</strong>
+              <p>金银花、藿香、陈皮更适合衣柜、玄关和房间角落。</p>
+            </div>
+            <div class="helper-card">
+              <strong>日常佩戴</strong>
+              <p>玫瑰花、桂花、甘草等更适合长期随身搭配。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:34px;">
+        <span class="kicker reveal">Herbal Notes</span>
+        <h2 class="section-title reveal">草本灵感气泡</h2>
+        <p class="section-subtitle reveal">点击上面的草本名称时，下方会自动高亮对应的彩色说明卡。</p>
+
+        <div class="herb-info-grid" id="herbInfoGrid">
+          <div class="herb-info-card color-1" id="info-艾草"><strong>艾草</strong><div class="desc">温暖草本气息，更有安定和陪伴感。</div></div>
+          <div class="herb-info-card color-2" id="info-薄荷"><strong>薄荷</strong><div class="desc">清凉、轻快，更适合夏季和提神场景。</div></div>
+          <div class="herb-info-card color-3" id="info-薰衣草"><strong>薰衣草</strong><div class="desc">柔和、舒缓，适合夜晚和静心时刻。</div></div>
+          <div class="herb-info-card color-4" id="info-陈皮"><strong>陈皮</strong><div class="desc">温润果香，更有稳定耐闻的层次感。</div></div>
+          <div class="herb-info-card color-5" id="info-丁香"><strong>丁香</strong><div class="desc">香气更浓郁，也更有记忆点。</div></div>
+          <div class="herb-info-card color-6" id="info-菊花"><strong>菊花</strong><div class="desc">清雅、轻透，更适合柔和方向。</div></div>
+          <div class="herb-info-card color-7" id="info-香茅"><strong>香茅</strong><div class="desc">明亮清新，更适合清爽夏日气质。</div></div>
+          <div class="herb-info-card color-8" id="info-玫瑰花"><strong>玫瑰花</strong><div class="desc">更有柔和花香感，适合偏浪漫审美。</div></div>
+          <div class="herb-info-card color-9" id="info-桂花"><strong>桂花</strong><div class="desc">温柔甜润，更适合日常佩戴。</div></div>
+          <div class="herb-info-card color-10" id="info-藿香"><strong>藿香</strong><div class="desc">更清透干净，适合做空间陪伴香气。</div></div>
+          <div class="herb-info-card color-11" id="info-金银花"><strong>金银花</strong><div class="desc">清新淡雅，整体会更轻盈通透。</div></div>
+          <div class="herb-info-card color-12" id="info-薄荷脑"><strong>薄荷脑</strong><div class="desc">清凉感更强，适合做鲜明提神型组合。</div></div>
+          <div class="herb-info-card color-13" id="info-百合"><strong>百合</strong><div class="desc">柔和安静，更适合舒缓陪伴方向。</div></div>
+          <div class="herb-info-card color-14" id="info-茉莉花"><strong>茉莉花</strong><div class="desc">花香更明显，气质更温润细腻。</div></div>
+          <div class="herb-info-card color-15" id="info-当归"><strong>当归</strong><div class="desc">草本感更厚实，适合做偏沉稳组合。</div></div>
+          <div class="herb-info-card color-16" id="info-川芎"><strong>川芎</strong><div class="desc">整体更有厚度，也更显层次感。</div></div>
+          <div class="herb-info-card color-17" id="info-甘草"><strong>甘草</strong><div class="desc">更柔和，适合作为过渡和调和型选择。</div></div>
+          <div class="herb-info-card color-18" id="info-花椒"><strong>花椒</strong><div class="desc">气息更鲜明，适合有记忆点的组合。</div></div>
+          <div class="herb-info-card color-19" id="info-薄荷叶"><strong>薄荷叶</strong><div class="desc">清凉感自然，更适合轻盈花香搭配。</div></div>
+          <div class="herb-info-card color-20" id="info-紫苏"><strong>紫苏</strong><div class="desc">更有轻草本感，适合清新路线。</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div>© Penta-Victory · 中央财经大学</div>
+      <div>DIY 定制</div>
     </div>
-  </div>
+  </footer>
 
-  <h3 style="margin-top:36px;">草药功效气泡</h3>
-  <div class="herb-info-grid" id="herb-info-grid">
-    <div class="herb-info-card color-1" id="info-艾草"><strong>艾草</strong><div class="desc">温经散寒、安神助眠。</div></div>
-    <div class="herb-info-card color-2" id="info-薄荷"><strong>薄荷</strong><div class="desc">清凉提神，缓解闷热。</div></div>
-    <div class="herb-info-card color-3" id="info-薰衣草"><strong>薰衣草</strong><div class="desc">安神放松，适合枕边。</div></div>
-    <div class="herb-info-card color-4" id="info-陈皮"><strong>陈皮</strong><div class="desc">理气和中，带淡淡果香。</div></div>
-    <div class="herb-info-card color-5" id="info-丁香"><strong>丁香</strong><div class="desc">温中散寒，驱虫提味。</div></div>
-    <div class="herb-info-card color-6" id="info-菊花"><strong>菊花</strong><div class="desc">清肝明目，香气清雅。</div></div>
-    <div class="herb-info-card color-7" id="info-香茅"><strong>香茅</strong><div class="desc">天然驱蚊，清新不刺鼻。</div></div>
-    <div class="herb-info-card color-8" id="info-玫瑰花"><strong>玫瑰花</strong><div class="desc">调和情绪，柔和花香。</div></div>
-    <div class="herb-info-card color-9" id="info-桂花"><strong>桂花</strong><div class="desc">甜润香气，中和药味。</div></div>
-    <div class="herb-info-card color-10" id="info-藿香"><strong>藿香</strong><div class="desc">化湿醒脾，净化空气。</div></div>
-    <div class="herb-info-card color-11" id="info-金银花"><strong>金银花</strong><div class="desc">清热解毒，淡雅香气。</div></div>
-    <div class="herb-info-card color-12" id="info-薄荷脑"><strong>薄荷脑</strong><div class="desc">强烈清凉感，少量使用。</div></div>
-    <div class="herb-info-card color-13" id="info-百合"><strong>百合</strong><div class="desc">安神润燥，香气柔和。</div></div>
-    <div class="herb-info-card color-14" id="info-茉莉花"><strong>茉莉花</strong><div class="desc">馥郁花香，提振心情。</div></div>
-    <div class="herb-info-card color-15" id="info-当归"><strong>当归</strong><div class="desc">活血养血，略带甜香。</div></div>
-    <div class="herb-info-card color-16" id="info-川芎"><strong>川芎</strong><div class="desc">活血行气，药香浓郁。</div></div>
-    <div class="herb-info-card color-17" id="info-甘草"><strong>甘草</strong><div class="desc">调和诸药，柔化香气。</div></div>
-    <div class="herb-info-card color-18" id="info-花椒"><strong>花椒</strong><div class="desc">温中散寒，驱虫提味。</div></div>
-    <div class="herb-info-card color-19" id="info-薄荷叶"><strong>薄荷叶</strong><div class="desc">清凉提神，适合搭配花香。</div></div>
-    <div class="herb-info-card color-20" id="info-紫苏"><strong>紫苏</strong><div class="desc">理气和胃，香气清新。</div></div>
-  </div>
+  <script src="script.js"></script>
+  <script>
+    function getSelectedHerbs() {
+      return Array.from(document.querySelectorAll('.herb-chip input:checked')).map(item => item.value);
+    }
 
-</section>
+    function updatePreview() {
+      const herbs = getSelectedHerbs();
+      const result = document.getElementById('result');
 
-<script src="script.js"></script>
+      if (herbs.length === 0) {
+        result.innerHTML = '请选择 3-4 种草本，生成你的专属香气描述。';
+        return;
+      }
+
+      if (herbs.length > 5) {
+        result.innerHTML = '当前草本种类偏多，建议控制在 5 种以内，让香气更清晰、层次更稳定。';
+        return;
+      }
+
+      let theme = '整体更适合作为日常随身佩戴款，气息平衡且更容易长期接受。';
+
+      if (herbs.some(h => ['薰衣草','百合','茉莉花'].includes(h))) {
+        theme = '整体更偏安神、放松和温柔陪伴，适合夜晚、书桌或休息时刻。';
+      } else if (herbs.some(h => ['香茅','薄荷','薄荷脑'].includes(h))) {
+        theme = '整体更偏清凉、清爽和轻快感，适合夏季、户外和随身场景。';
+      } else if (herbs.some(h => ['金银花','藿香','陈皮'].includes(h))) {
+        theme = '整体更偏清新、干净和空间陪伴感，适合房间、衣柜和玄关。';
+      }
+
+      result.innerHTML = `
+        <strong>你已选择：</strong>${herbs.join('、')}<br><br>
+        <strong>当前风格：</strong>${theme}<br><br>
+        <strong>建议：</strong>下一步可以继续选择更适合这一气质的外观风格，让整体表达更完整。
+      `;
+    }
+
+    function resetHerbs() {
+      document.querySelectorAll('.herb-chip input').forEach(item => item.checked = false);
+      updatePreview();
+    }
+
+    function saveHerbsAndNext() {
+      const herbs = getSelectedHerbs();
+
+      if (herbs.length === 0) {
+        alert('请先选择至少一种草本。');
+        return;
+      }
+
+      if (herbs.length > 5) {
+        alert('建议将草本控制在 5 种以内。');
+        return;
+      }
+
+      localStorage.setItem('diy_herbs', JSON.stringify(herbs));
+      window.location.href = 'design.html';
+    }
+
+    window.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.herb-chip input').forEach(item => {
+        item.addEventListener('change', updatePreview);
+      });
+
+      document.querySelectorAll('.herb-chip').forEach(label => {
+        label.addEventListener('click', function () {
+          const herb = label.getAttribute('data-herb');
+          const card = document.getElementById('info-' + herb);
+          if (card) {
+            document.querySelectorAll('.herb-info-card').forEach(c => c.classList.remove('highlight'));
+            card.classList.add('highlight');
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            setTimeout(() => card.classList.remove('highlight'), 1500);
+          }
+        });
+      });
+
+      updatePreview();
+    });
+  </script>
 </body>
 </html>
